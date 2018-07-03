@@ -1,4 +1,4 @@
-// figure out a theme 
+// figure out a theme (parks and rec trivia? game of thrones trivia? arrested development? marvel studios trivia?)
 // need to make arrays of questions with right and wrong answers
 // link a gif to them
 // show a timer
