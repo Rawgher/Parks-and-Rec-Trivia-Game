@@ -10,15 +10,7 @@
 // answer = string number of what is the answer
 
 
-// var startScreen;
-// var counter = 30;
-// var questionArray = ["What is the capital of Australia?", "What is the capital of Liberia?", "What is the capital of Taiwan?", "What is the capital of Japan?", "What is the capital of China?", "What is the capital of Turkey?", "What is the capital of Colombia?", "What is the capital of India?"];
-// var answerArray = [["Canberra", "Melbourne", "Sydney", "Darwin"], ["Arthington","Monrovia","Tuzon","Marshall"], ["Tainan City", "Taichung", "Taipei", "Hsinchu"], ["Kyoto","Hiroshima","Tokyo","Osaka"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
-// var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
-// var correctAnswers = ["A. Canberra", "B. Monrovia", "C. Taipei", "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
-
-// var clickSound = new Audio("sound/button-click.mp3");
-
+var startGame;
 var rightAnswers = 0;
 var wrongAnswers = 0;
 var unanswered = 0;
@@ -35,30 +27,14 @@ var gifArray = ["assets/images/andy.gif", "assets/images/ann.gif", "assets/image
      
 
 function gameStart () {
-    // need to set and show timer
-    console.log("game start?");
-    
-    
-    
-    generateQuestions();
-    console.log("did dis")
-    // need to have questions load
-    //
+    startGame ="<div class='flex items-center justify-center pa4'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue start' href='#' role='button'>Start the quiz</a></div>";
+	$("#questionDiv").append(startGame);
 }
 
+gameStart();
 
  
 
-// function createQuestion() {
-//     var questionDiv = $("<div class='questions' data-name>" + key + "</div>");
-//     var question = $("<div class='question'>" + questions.Question + "</div>")
-//     var option = $("<div class='option'>" + questions.Option[0] + "</div>") +
-//     $("<div class='option'>" + questions.Option[1] + "</div>") +
-//     $("<div class='option'>" + questions.Option[2] + "</div>") +
-//     $("<div class='option'>" + questions.Option[3] + "</div>");
-//     questionDiv.append(question, option);
-//     return questionDiv;
-// }
 
 function generateQuestions() {
     timer = $("<div class='timer-word'>Time Remaining: <span class='timer'>20</span></div>");
@@ -71,7 +47,6 @@ function generateQuestions() {
 }
 
 
-gameStart();
 
 // figure out a theme (parks and rec trivia? game of thrones trivia? arrested development? marvel studios trivia?)
 // need to make arrays of questions with right and wrong answers
