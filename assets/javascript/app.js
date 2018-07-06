@@ -4,16 +4,21 @@
 // need to set time limit for game and time limit for new question to appear
 // 
 
-
+// set answer options to an array and then set the write anser on an array
+// questions = ""
+// answer = [array of answers]
+// answer = string number of what is the answer
 
 
 var rightAnswers = 0;
 var wrongAnswers = 0;
+var questionNumber = 0;
 
-
+var questions
 
 function gameStart () {
     // need to set and show timer
+    questions = resetQuestions();
     // need to have questions load
     //
 }
@@ -23,95 +28,121 @@ function resetQuestions () {
     return {
         "Question1": {
             Question: "Who lived in the pit for a good amount of time?",
-            Wrong1: "Ann Perkins",
-            Wrong2: "Ron Swanson",
-            Right: "Andy Dwyer",
-            Wrong3: "Jerry",
+            Option1: "Ann Perkins",
+            Option2: "Ron Swanson",
+            Option3: "Andy Dwyer",
+            Option4: "Jerry",
+            Answer: "Andy Dwyer",
             image: "assets/images/andy.gif"
         },
 
         "Question2": {
-            Question: "Ann's original profession was: "
-            Wrong1: "Public relations",
+            Question: "Ann's original profession was: ",
+            Option1: "Public relations",
+            Option2: "Nursing",
+            Option3: "Teacher",
+            Option4: "Waitress",
             Right: "Nursing",
-            Wrong2: "Teacher",
-            Wrong3: "Waitress",
             image: "assets/images/ann.gif"
         },
 
         "Question3": {
-            Question: "What state is Pawnee located in?"
-            Wrong1: "Utah",
-            Wrong2: "Missouri",
-            Wrong3: "Montana",
+            Question: "What state is Pawnee located in?",
+            Option1: "Utah",
+            Option2: "Missouri",
+            Option3: "Montana",
+            Option4: "Indiana",
             Right: "Indiana",
             image: "assets/images/pawnee-indiana.gif"
         },
 
         "Question4": {
             Question: "What was the first company that Tom helped create?"
+            Option1: "Entertainment 720",
+            Option2: "Tom's Bistro",
+            Option3: "Snake Hole Lounge",
+            Option4: "Rent-A-Swag",
             Right: "Entertainment 720",
-            Wrong1: "Tom's Bistro",
-            Wrong2: "Snake Hole Lounge",
-            Wrong3: "Rent-A-Swag",
             image: "assets/images/tom.gif"
         },
 
         "Question5": {
             Question: "What is the name of Pawnee's beloved mini horse?"
-            Wrong1: "Li'l Agnes",
+            Option1: "Li'l Agnes",
+            Option2: "Li'l Sebastian",
+            Option3: "Li'l Tom",
+            Option4: "Li'l Fred",
             Right: "Li'l Sebastian",
-            Wrong2: "Li'l Tom",
-            Wrong3: "Li'l Fred",
             image: "assets/images/sebastian.gif"
         },
 
         "Question6": {
             Question: "What is Jerry's real name?"
-            Wrong1: "Terry",
-            Wrong2: "Barry",
-            Right: "Garry",
-            Wrong3: "Larry",
+            Option1: "Terry",
+            Option2: "Barry",
+            Option3: "Garry",
+            Option4: "Larry",
+            Answer: "Garry",
             image: "assets/images/garry.gif"
         },
 
         "Question7": {
             Question: "How old was Ben when the Ice Town incident occured"
-            Wrong1: "24",
-            Wrong2: "16",
-            Wrong3: "21",
+            Option1: "24",
+            Option2: "16",
+            Option3: "21",
+            Option4: "18",
             Right: "18",
             image: "assets/images/ben.gif"
         },
 
         "Question8": {
             Question: "Which character was only supposed to be in Season 1?"
+            Option1: "Andy Dwyer",
+            Option2: "Tom Haverford",
+            Option3: "April Ludgate",
+            Option4: "Ron Swanson",
             Right: "Andy Dwyer",
-            Wrong1: "Tom Haverford",
-            Wrong2: "April Ludgate",
-            Wrong3: "Ron Swanson",
             image: "assets/images/andy-crying.gif"
         },
 
         "Question9": {
             Question: "What board game did Ben create?"
-            Wrong1:"The Iron Throne",
-            Wrong2:"You're an Accountant Harry Potter",
+            Option1:"The Iron Throne",
+            Option2:"You're an Accountant Harry Potter",
+            Option3:"The Cones of Dunshire",
+            Option4:"Count Chocula versus Frankenberry",
             Right:"The Cones of Dunshire",
-            Wrong3:"Count Chocula versus Frankenberry",
             image: "assets/images/cones.gif"
         },
+        
         "Question10": {
             Question: "What is Donna and Tom's signature catchphrase?"
-            Wrong1: "It's Wednesday my dudes",
-            Wrong2: "All black everythang",
-            Wrong3: "What happens in Pawnee ends up on social media",
+            Option1: "It's Wednesday my dudes",
+            Option2: "All black everythang",
+            Option3: "What happens in Pawnee ends up on social media",
+            Option4: "Treat yo self",
             Right: "Treat yo self",
             image: "assets/images/treat-yo-self.gif"
         }
     }
 }
 
+function createQuestion (question, key) {
+    var questionDiv = $("<div class='question' data-name" + key + ">");
+    var one = $("<div class='option'" + )
+    var two = 
+    var three = 
+    var four = 
+}
+function createBackgroundDiv(backgrounds, key) {
+    var backgroundDiv = $("<div class='background' data-name=" + key + ">");
+    var backgroundImage = $("<img alt='background' class='backgroundImage'>").attr('src', backgrounds.image);
+    var backgroundName = $("<div class='backgroundName'>").text(backgrounds.name);
+    var backgroundSound = $("<audio><source src='" + backgrounds.audio + "'></source></audio>");
+    backgroundDiv.append(backgroundImage).append(backgroundName).append(backgroundSound);
+    return backgroundDiv;
+}
 
 
 // figure out a theme (parks and rec trivia? game of thrones trivia? arrested development? marvel studios trivia?)
