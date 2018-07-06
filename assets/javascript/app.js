@@ -11,6 +11,7 @@
 
 
 var startGame;
+var counter = 20;
 var rightAnswers = 0;
 var wrongAnswers = 0;
 var unanswered = 0;
@@ -19,6 +20,7 @@ var correctOption;
 var gameTimer;
 var options;
 var questions;
+var gameText;
 var questionArray = ["Who lived in the pit for a good amount of time?", "Ann's original profession was: ", "What state is Pawnee located in?", "What was the first company that Tom helped create?", "What is the name of Pawnee's beloved mini horse?", "What is Jerry's real name?", "How old was Ben when the Ice Town incident occured", "Which character was only supposed to be in Season 1?", "What board game did Ben create?", "What is Donna and Tom's signature catchphrase?"];
 
 var answerArray = [["Ann Perkins", "Ron Swanson", "Andy Dwyer",  "Jerry"], ["Public relations", "Nursing", "Teacher", "Waitress"], ["Utah", "Missouri", "Montana", "Indiana"], ["Entertainment 720", "Tom's Bistro", "Snake Hole Lounge", "Rent-A-Swag"], ["Li'l Agnes", "Li'l Sebastian", "Li'l Tom", "Li'l Fred"], ["Terry", "Barry", "Garry", "Larry"], ["24", "16", "21", "18"], ["Andy Dwyer", "Tom Haverford", "April Ludgate", "Ron Swanson"], ["The Iron Throne", "You're an Accountant Harry Potter", "The Cones of Dunshire", "Count Chocula versus Frankenberry"], ["It's Wednesday my dudes", "All black everythang", "What happens in Pawnee ends up on social media", "Treat yo self"]];
@@ -64,6 +66,29 @@ $("body").on("click", ".start", function(event){
     });
 
 )};
+
+function timeOut() {
+	unanswered++;
+	gameText = "<div class='timer-word'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>You're out of time! The right answer was: " + correctAnswers[questionNounter] + "</div>" + "<img src='" + gifArray[questionNumber] + "'>";
+	$("#questionDiv").append(gameText);
+	setTimeout(wait, 4000); 
+}
+
+function youDidGood() {
+	rightAnswers++;
+	gameText = "<div class='timer-word'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>You got it! The answer is: " + correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
+	$("#questionDiv").append(gameText);
+	setTimeout(wait, 4000); 
+}
+
+function youDidBad() {
+    wrongAnswers++;
+	gameText = "<div class='timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>You're wrong! The answer is: "+ correctAnswers[questionCounter] + "</div><img src='" + gifArray[questionNumber] + "'>";
+	$("#questionDiv").append(gameText);
+    setTimeout(wait, 4000);
+}
+
+
 
 
 function generateQuestions() {
