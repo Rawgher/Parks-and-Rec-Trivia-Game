@@ -27,6 +27,12 @@ var correctOption;
 var timer;
 var options;
 var questions;
+var questionArray = ["Who lived in the pit for a good amount of time?", "Ann's original profession was: ", "What state is Pawnee located in?", "What was the first company that Tom helped create?", "What is the name of Pawnee's beloved mini horse?", "What is Jerry's real name?", "How old was Ben when the Ice Town incident occured", "Which character was only supposed to be in Season 1?", "What board game did Ben create?", "What is Donna and Tom's signature catchphrase?"];
+
+var answerArray = [["Ann Perkins", "Ron Swanson", "Andy Dwyer",  "Jerry"], ["Public relations", "Nursing", "Teacher", "Waitress"], ["Utah", "Missouri", "Montana", "Indiana"], ["Entertainment 720", "Tom's Bistro", "Snake Hole Lounge", "Rent-A-Swag"], ["Li'l Agnes", "Li'l Sebastian", "Li'l Tom", "Li'l Fred"], ["Terry", "Barry", "Garry", "Larry"], ["24", "16", "21", "18"], ["Andy Dwyer", "Tom Haverford", "April Ludgate", "Ron Swanson"], ["The Iron Throne", "You're an Accountant Harry Potter", "The Cones of Dunshire", "Count Chocula versus Frankenberry"], ["It's Wednesday my dudes", "All black everythang", "What happens in Pawnee ends up on social media", "Treat yo self"]];
+
+var gifArray = ["assets/images/andy.gif", "assets/images/ann.gif", "assets/images/pawnee-indiana.gif", "assets/images/tom.gif", "assets/images/sebastian.gif", "assets/images/garry.gif", "assets/images/ben.gif", "assets/images/andy-crying.gif", "assets/images/cones.gif", "assets/images/treat-yo-self.gif"]
+     
 
 function gameStart () {
     // need to set and show timer
@@ -41,12 +47,7 @@ function gameStart () {
 }
 
 
-var questionArray = ["Who lived in the pit for a good amount of time?", "Ann's original profession was: ", "What state is Pawnee located in?", "What was the first company that Tom helped create?", "What is the name of Pawnee's beloved mini horse?", "What is Jerry's real name?", "How old was Ben when the Ice Town incident occured", "Which character was only supposed to be in Season 1?", "What board game did Ben create?", "What is Donna and Tom's signature catchphrase?"];
-
-var answerArray = [["Ann Perkins", "Ron Swanson", "Andy Dwyer",  "Jerry"], ["Public relations", "Nursing", "Teacher", "Waitress"], ["Utah", "Missouri", "Montana", "Indiana"], ["Entertainment 720", "Tom's Bistro", "Snake Hole Lounge", "Rent-A-Swag"], ["Li'l Agnes", "Li'l Sebastian", "Li'l Tom", "Li'l Fred"], ["Terry", "Barry", "Garry", "Larry"], ["24", "16", "21", "18"], ["Andy Dwyer", "Tom Haverford", "April Ludgate", "Ron Swanson"], ["The Iron Throne", "You're an Accountant Harry Potter", "The Cones of Dunshire", "Count Chocula versus Frankenberry"], ["It's Wednesday my dudes", "All black everythang", "What happens in Pawnee ends up on social media", "Treat yo self"]];
-
-var gifArray = ["assets/images/andy.gif", "assets/images/ann.gif", "assets/images/pawnee-indiana.gif", "assets/images/tom.gif", "assets/images/sebastian.gif", "assets/images/garry.gif", "assets/images/ben.gif", "assets/images/andy-crying.gif", "assets/images/cones.gif", "assets/images/treat-yo-self.gif"]
-      
+ 
 
 // function createQuestion() {
 //     var questionDiv = $("<div class='questions' data-name>" + key + "</div>");
@@ -61,11 +62,11 @@ var gifArray = ["assets/images/andy.gif", "assets/images/ann.gif", "assets/image
 
 function generateQuestions() {
     timer = $("<div class='timer-word'>Time Remaining: <span class='timer'>20</span></div>");
-    questions = $("<div class='question'>" + questionArray.Question[questionNumber] + "</div>");
-    options = $("<div class='option'>" + questionArray.Option[questionNumber][0] + "</div>") +
-    $("<div class='option'>" + questionArray.Option[questionNumber][1] + "</div>") +
-    $("<div class='option'>" + questionArray.Option[questionNumber][2] + "</div>") +
-    $("<div class='option'>" + questionArray.Option[questionNumber][3] + "</div>");
+    questions = $("<div class='question'>" + questionArray[questionNumber] + "</div>");
+    options = $("<div class='option'> A." + answerArray[questionNumber][0] + 
+    "</div><div class='option'> B." + answerArray[questionNumber][1] + 
+    "</div><div class='option'> C." + answerArray[questionNumber][2] + 
+    "</div><div class='option'> D." + answerArray[questionNumber][3] + "</div>");
     $("#questionDiv").append(timer, questions, options);
 }
 
