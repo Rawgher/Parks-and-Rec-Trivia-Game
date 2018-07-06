@@ -14,12 +14,15 @@ var rightAnswers = 0;
 var wrongAnswers = 0;
 var questionNumber = 0;
 
-var questions, options, right
+var questions;
 
 function gameStart () {
     // need to set and show timer
     console.log("game start?");
     questions = resetQuestions();
+    
+    
+    
     displayQuestion();
     console.log("did dis")
     // need to have questions load
@@ -31,124 +34,103 @@ function resetQuestions () {
     return {
         "Question1": {
             Question: "Who lived in the pit for a good amount of time?",
-            Option1: "Ann Perkins",
-            Option2: "Ron Swanson",
-            Option3: "Andy Dwyer",
-            Option4: "Jerry",
-            Answer: "Andy Dwyer",
+            Option: ["Ann Perkins", "Ron Swanson", "Andy Dwyer",  "Jerry"],
+            Answer: 0,
             image: "assets/images/andy.gif"
         },
 
         "Question2": {
             Question: "Ann's original profession was: ",
-            Option1: "Public relations",
-            Option2: "Nursing",
-            Option3: "Teacher",
-            Option4: "Waitress",
-            Right: "Nursing",
+            Option: ["Public relations", "Nursing", "Teacher", "Waitress"],
+            Right: 1,
             image: "assets/images/ann.gif"
         },
 
         "Question3": {
             Question: "What state is Pawnee located in?",
-            Option1: "Utah",
-            Option2: "Missouri",
-            Option3: "Montana",
-            Option4: "Indiana",
-            Right: "Indiana",
+            Option: ["Utah", "Missouri", "Montana", "Indiana"],
+            Right: 3,
             image: "assets/images/pawnee-indiana.gif"
         },
 
         "Question4": {
             Question: "What was the first company that Tom helped create?",
-            Option1: "Entertainment 720",
-            Option2: "Tom's Bistro",
-            Option3: "Snake Hole Lounge",
-            Option4: "Rent-A-Swag",
-            Right: "Entertainment 720",
+            Option: ["Entertainment 720", "Tom's Bistro", "Snake Hole Lounge", "Rent-A-Swag"],
+            Right: 0,
             image: "assets/images/tom.gif"
         },
 
         "Question5": {
             Question: "What is the name of Pawnee's beloved mini horse?",
-            Option1: "Li'l Agnes",
-            Option2: "Li'l Sebastian",
-            Option3: "Li'l Tom",
-            Option4: "Li'l Fred",
-            Right: "Li'l Sebastian",
+            Option1: ["Li'l Agnes", "Li'l Sebastian", "Li'l Tom", "Li'l Fred"],
+            Right: 1,
             image: "assets/images/sebastian.gif"
         },
 
         "Question6": {
             Question: "What is Jerry's real name?",
-            Option1: "Terry",
-            Option2: "Barry",
-            Option3: "Garry",
-            Option4: "Larry",
-            Answer: "Garry",
+            Option: ["Terry", "Barry", "Garry", "Larry"],
+            Answer: 2,
             image: "assets/images/garry.gif"
         },
 
         "Question7": {
             Question: "How old was Ben when the Ice Town incident occured",
-            Option1: "24",
-            Option2: "16",
-            Option3: "21",
-            Option4: "18",
-            Right: "18",
+            Option: ["24", "16", "21", "18"],
+            Right: 3,
             image: "assets/images/ben.gif"
         },
 
         "Question8": {
             Question: "Which character was only supposed to be in Season 1?",
-            Option1: "Andy Dwyer",
-            Option2: "Tom Haverford",
-            Option3: "April Ludgate",
-            Option4: "Ron Swanson",
-            Right: "Andy Dwyer",
+            Option: ["Andy Dwyer", "Tom Haverford", "April Ludgate", "Ron Swanson"],
+            Right: 0,
             image: "assets/images/andy-crying.gif"
         },
 
         "Question9": {
             Question: "What board game did Ben create?",
-            Option1:"The Iron Throne",
-            Option2:"You're an Accountant Harry Potter",
-            Option3:"The Cones of Dunshire",
-            Option4:"Count Chocula versus Frankenberry",
-            Right:"The Cones of Dunshire",
+            Option: ["The Iron Throne", "You're an Accountant Harry Potter", "The Cones of Dunshire", "Count Chocula versus Frankenberry"],
+            Right: 2,
             image: "assets/images/cones.gif"
         },
         
         "Question10": {
             Question: "What is Donna and Tom's signature catchphrase?",
-            Option1: "It's Wednesday my dudes",
-            Option2: "All black everythang",
-            Option3: "What happens in Pawnee ends up on social media",
-            Option4: "Treat yo self",
-            Right: "Treat yo self",
+            Option: ["It's Wednesday my dudes", "All black everythang", "What happens in Pawnee ends up on social media", "Treat yo self"],
+            Right: 3,
             image: "assets/images/treat-yo-self.gif"
         }
     }
 }
 
-function createQuestion (questions, key) {
-    var questionDiv = $("<div class='questions' data-name" + key + ">");
-    var questions = $("<div class='question'" + questions.Question + ">")
-    var one = $("<div class='option'" + questions.Option1 + ">");
-    var two = $("<div class='option'" + questions.Option2 + ">");
-    var three = $("<div class='option'" + questions.Option3 + ">");
-    var four = $("<div class='option'" + questions.Option4 + ">");
-    questionDiv.append(questions, one, two, three, four);
+function createQuestion() {
+    var questionDiv = $("<div class='questions' data-name>" + key + "</div>");
+    var question = $("<div class='question'>" + questions.Question + "</div>")
+    var option = $("<div class='option'>" + questions.Option[0] + "</div>") +
+    $("<div class='option'>" + questions.Option[1] + "</div>") +
+    $("<div class='option'>" + questions.Option[2] + "</div>") +
+    $("<div class='option'>" + questions.Option[3] + "</div>");
+    questionDiv.append(question, option);
     return questionDiv;
+
+
 }
 
 function displayQuestion () {
+    console.log("is display question happening");
     var keys = Object.keys(questions);
+    console.log('this is where the key starts');
     for (var i = 0; i < keys.length; i++) {
+        console.log("first line of for loop");
         var questionsKeys = keys[i];
-        var questions = questions[questionsKeys];
-        var questionDiv = createQuestion(questions, questionsKeys);
+        console.log("second line of for loop");
+        var question = questions[questionsKeys];
+        console.log("third line of for loop");
+        var questionDiv = createQuestion(question, questionsKeys);
+        console.log("last line of for loop");
         $("#questionDiv").append(questionDiv);
+        console.log("appending?")
     }
 }
 
