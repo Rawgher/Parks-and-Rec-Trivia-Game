@@ -4,6 +4,21 @@
 // need to set time limit for game and time limit for new question to appear
 // 
 
+
+
+
+var rightAnswers = 0;
+var wrongAnswers = 0;
+
+
+
+function gameStart () {
+    // need to set and show timer
+    // need to have questions load
+    //
+}
+
+
 function resetQuestions () {
     return {
         "Question1": {
@@ -12,7 +27,7 @@ function resetQuestions () {
             Wrong2: "Ron Swanson",
             Right: "Andy Dwyer",
             Wrong3: "Jerry",
-            image: ""
+            image: "assets/images/andy.gif"
         },
 
         "Question2": {
@@ -21,7 +36,7 @@ function resetQuestions () {
             Right: "Nursing",
             Wrong2: "Teacher",
             Wrong3: "Waitress",
-            image: ""
+            image: "assets/images/ann.gif"
         },
 
         "Question3": {
@@ -30,7 +45,7 @@ function resetQuestions () {
             Wrong2: "Missouri",
             Wrong3: "Montana",
             Right: "Indiana",
-            image: ""
+            image: "assets/images/pawnee-indiana.gif"
         },
 
         "Question4": {
@@ -39,7 +54,7 @@ function resetQuestions () {
             Wrong1: "Tom's Bistro",
             Wrong2: "Snake Hole Lounge",
             Wrong3: "Rent-A-Swag",
-            image: ""
+            image: "assets/images/tom.gif"
         },
 
         "Question5": {
@@ -48,7 +63,7 @@ function resetQuestions () {
             Right: "Li'l Sebastian",
             Wrong2: "Li'l Tom",
             Wrong3: "Li'l Fred",
-            image: ""
+            image: "assets/images/sebastian.gif"
         },
 
         "Question6": {
@@ -57,46 +72,48 @@ function resetQuestions () {
             Wrong2: "Barry",
             Right: "Garry",
             Wrong3: "Larry",
-            image: ""
+            image: "assets/images/garry.gif"
         },
 
         "Question7": {
-            Question: "Why did Tom and Wendy's marriage end?"
-            Wrong1: "They weren't in love anymore",
-            Right: "It was a green card marriage",
-            Wrong2: "Wendy had to move back to Canada",
-            Wrong3: "Tom cheated on Wendy",
-            image: ""
-        },
-
-        "Question8": {
             Question: "How old was Ben when the Ice Town incident occured"
             Wrong1: "24",
             Wrong2: "16",
             Wrong3: "21",
             Right: "18",
-            image: ""
+            image: "assets/images/ben.gif"
         },
 
-        "Question9": {
+        "Question8": {
             Question: "Which character was only supposed to be in Season 1?"
             Right: "Andy Dwyer",
             Wrong1: "Tom Haverford",
             Wrong2: "April Ludgate",
             Wrong3: "Ron Swanson",
-            image: ""
+            image: "assets/images/andy-crying.gif"
         },
 
-        "Question10": {
+        "Question9": {
             Question: "What board game did Ben create?"
             Wrong1:"The Iron Throne",
             Wrong2:"You're an Accountant Harry Potter",
             Right:"The Cones of Dunshire",
             Wrong3:"Count Chocula versus Frankenberry",
-            image: ""
+            image: "assets/images/cones.gif"
         },
+        "Question10": {
+            Question: "What is Donna and Tom's signature catchphrase?"
+            Wrong1: "It's Wednesday my dudes",
+            Wrong2: "All black everythang",
+            Wrong3: "What happens in Pawnee ends up on social media",
+            Right: "Treat yo self",
+            image: "assets/images/treat-yo-self.gif"
+        }
     }
 }
+
+
+
 // figure out a theme (parks and rec trivia? game of thrones trivia? arrested development? marvel studios trivia?)
 // need to make arrays of questions with right and wrong answers
 // link a gif to them
