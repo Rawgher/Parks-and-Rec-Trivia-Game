@@ -14,11 +14,14 @@ var rightAnswers = 0;
 var wrongAnswers = 0;
 var questionNumber = 0;
 
-var questions
+var questions, options, right
 
 function gameStart () {
     // need to set and show timer
+    console.log("game start?");
     questions = resetQuestions();
+    displayQuestion();
+    console.log("did dis")
     // need to have questions load
     //
 }
@@ -57,7 +60,7 @@ function resetQuestions () {
         },
 
         "Question4": {
-            Question: "What was the first company that Tom helped create?"
+            Question: "What was the first company that Tom helped create?",
             Option1: "Entertainment 720",
             Option2: "Tom's Bistro",
             Option3: "Snake Hole Lounge",
@@ -67,7 +70,7 @@ function resetQuestions () {
         },
 
         "Question5": {
-            Question: "What is the name of Pawnee's beloved mini horse?"
+            Question: "What is the name of Pawnee's beloved mini horse?",
             Option1: "Li'l Agnes",
             Option2: "Li'l Sebastian",
             Option3: "Li'l Tom",
@@ -77,7 +80,7 @@ function resetQuestions () {
         },
 
         "Question6": {
-            Question: "What is Jerry's real name?"
+            Question: "What is Jerry's real name?",
             Option1: "Terry",
             Option2: "Barry",
             Option3: "Garry",
@@ -87,7 +90,7 @@ function resetQuestions () {
         },
 
         "Question7": {
-            Question: "How old was Ben when the Ice Town incident occured"
+            Question: "How old was Ben when the Ice Town incident occured",
             Option1: "24",
             Option2: "16",
             Option3: "21",
@@ -97,7 +100,7 @@ function resetQuestions () {
         },
 
         "Question8": {
-            Question: "Which character was only supposed to be in Season 1?"
+            Question: "Which character was only supposed to be in Season 1?",
             Option1: "Andy Dwyer",
             Option2: "Tom Haverford",
             Option3: "April Ludgate",
@@ -107,7 +110,7 @@ function resetQuestions () {
         },
 
         "Question9": {
-            Question: "What board game did Ben create?"
+            Question: "What board game did Ben create?",
             Option1:"The Iron Throne",
             Option2:"You're an Accountant Harry Potter",
             Option3:"The Cones of Dunshire",
@@ -117,7 +120,7 @@ function resetQuestions () {
         },
         
         "Question10": {
-            Question: "What is Donna and Tom's signature catchphrase?"
+            Question: "What is Donna and Tom's signature catchphrase?",
             Option1: "It's Wednesday my dudes",
             Option2: "All black everythang",
             Option3: "What happens in Pawnee ends up on social media",
@@ -128,22 +131,29 @@ function resetQuestions () {
     }
 }
 
-function createQuestion (question, key) {
-    var questionDiv = $("<div class='question' data-name" + key + ">");
-    var one = $("<div class='option'" + )
-    var two = 
-    var three = 
-    var four = 
-}
-function createBackgroundDiv(backgrounds, key) {
-    var backgroundDiv = $("<div class='background' data-name=" + key + ">");
-    var backgroundImage = $("<img alt='background' class='backgroundImage'>").attr('src', backgrounds.image);
-    var backgroundName = $("<div class='backgroundName'>").text(backgrounds.name);
-    var backgroundSound = $("<audio><source src='" + backgrounds.audio + "'></source></audio>");
-    backgroundDiv.append(backgroundImage).append(backgroundName).append(backgroundSound);
-    return backgroundDiv;
+function createQuestion (questions, key) {
+    var questionDiv = $("<div class='questions' data-name" + key + ">");
+    var questions = $("<div class='question'" + questions.Question + ">")
+    var one = $("<div class='option'" + questions.Option1 + ">");
+    var two = $("<div class='option'" + questions.Option2 + ">");
+    var three = $("<div class='option'" + questions.Option3 + ">");
+    var four = $("<div class='option'" + questions.Option4 + ">");
+    questionDiv.append(questions, one, two, three, four);
+    return questionDiv;
 }
 
+function displayQuestion () {
+    var keys = Object.keys(questions);
+    for (var i = 0; i < keys.length; i++) {
+        var questionsKeys = keys[i];
+        var questions = questions[questionsKeys];
+        var questionDiv = createQuestion(questions, questionsKeys);
+        $("#questionDiv").append(questionDiv);
+    }
+}
+
+
+gameStart();
 
 // figure out a theme (parks and rec trivia? game of thrones trivia? arrested development? marvel studios trivia?)
 // need to make arrays of questions with right and wrong answers
