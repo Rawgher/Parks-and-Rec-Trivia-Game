@@ -71,21 +71,21 @@ $("#questionDiv").on("click", ".start", function() {
 
 function timeOut() {
 	unanswered++;
-	gameText = "<div class='timer-word'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>You're out of time! The right answer was: " + correctAnswers[questionNumber] + "</div>" + "<img src='" + gifArray[questionNumber] + "'>";
+	gameText = "<div class='text-center'>You're out of time! The right answer was: " + correctAnswers[questionNumber] + "</div>" + "<img src='" + gifArray[questionNumber] + "'>";
 	$("#questionDiv").append(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidGood() {
 	rightAnswers++;
-	gameText = "<div class='timer-word'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>You got it! The answer is: " + correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
+	gameText = "<div class='text-center'>You got it! The answer is: " + correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
 	$("#questionDiv").append(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidBad() {
     wrongAnswers++;
-	gameText = "<div class='timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>You're wrong! The answer is: "+ correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
+	gameText = "<div class='text-center'>You're wrong! The answer is: "+ correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
 	$("#questionDiv").append(gameText);
     setTimeout(wait, 4000);
 }
@@ -139,18 +139,8 @@ function resetGame() {
 	counter = 20;
 	generateQuestions();
     timer();
-    $("#questionDiv").empty();
+
 }
 
-// figure out a theme (parks and rec trivia? game of thrones trivia? arrested development? marvel studios trivia?)
-// need to make arrays of questions with right and wrong answers
-// link a gif to them
-// show a timer
-// make it tell the right answer
-// display gif
-// loading screen for 3-5 seconds next question
-// make it show something when time out
-// game over
-// put a message
-// right wrong unanswered
-// play again - does not reload page just resets
+// need to fix div so things disappear after answered
+// need reset to make everything disappear and then start over
