@@ -11,7 +11,8 @@ function resetQuestions () {
             Wrong1: "Ann Perkins",
             Wrong2: "Ron Swanson",
             Right: "Andy Dwyer",
-            Wrong3: "Jerry"
+            Wrong3: "Jerry",
+            image: ""
         },
 
         "Question2": {
@@ -19,7 +20,8 @@ function resetQuestions () {
             Wrong1: "Public relations",
             Right: "Nursing",
             Wrong2: "Teacher",
-            Wrong3: "Waitress"
+            Wrong3: "Waitress",
+            image: ""
         },
 
         "Question3": {
@@ -27,7 +29,8 @@ function resetQuestions () {
             Wrong1: "Utah",
             Wrong2: "Missouri",
             Wrong3: "Montana",
-            Right: "Indiana"
+            Right: "Indiana",
+            image: ""
         },
 
         "Question4": {
@@ -35,23 +38,26 @@ function resetQuestions () {
             Right: "Entertainment 720",
             Wrong1: "Tom's Bistro",
             Wrong2: "Snake Hole Lounge",
-            Wrong3: "Rent-A-Swag"
+            Wrong3: "Rent-A-Swag",
+            image: ""
         },
 
         "Question5": {
-            Question: "Which of these names was never a possibile Mouse Rat name?"
-            Wrong1: "Two Doors Down",
-            Right: "Just the Tiptoe",
-            Wrong2: "Scarecrow Boat",
-            Wrong3: "Fiveskin"
+            Question: "What is the name of Pawnee's beloved mini horse?"
+            Wrong1: "Li'l Agnes",
+            Right: "Li'l Sebastian",
+            Wrong2: "Li'l Tom",
+            Wrong3: "Li'l Fred",
+            image: ""
         },
 
         "Question6": {
-            Question: "Where do Ann and Chris move to at the end of the series?"
-            Wrong1: "Florida",
-            Wrong2: "Illinois",
-            Right: "Michigan",
-            Wrong3: "New York"
+            Question: "What is Jerry's real name?"
+            Wrong1: "Terry",
+            Wrong2: "Barry",
+            Right: "Garry",
+            Wrong3: "Larry",
+            image: ""
         },
 
         "Question7": {
@@ -59,31 +65,35 @@ function resetQuestions () {
             Wrong1: "They weren't in love anymore",
             Right: "It was a green card marriage",
             Wrong2: "Wendy had to move back to Canada",
-            Wrong3: "Tom cheated on Wendy"
+            Wrong3: "Tom cheated on Wendy",
+            image: ""
         },
 
         "Question8": {
             Question: "How old was Ben when the Ice Town incident occured"
-            Wrong1:
-            Wrong2:
-            Wrong3:
-            Right:
+            Wrong1: "24",
+            Wrong2: "16",
+            Wrong3: "21",
+            Right: "18",
+            image: ""
         },
 
         "Question9": {
-            Question:
-            Right:
-            Wrong1:
-            Wrong2:
-            Wrong3:
+            Question: "Which character was only supposed to be in Season 1?"
+            Right: "Andy Dwyer",
+            Wrong1: "Tom Haverford",
+            Wrong2: "April Ludgate",
+            Wrong3: "Ron Swanson",
+            image: ""
         },
 
         "Question10": {
-            Question:
-            Wrong1:
-            Wrong2:
-            Right:
-            Wrong3:
+            Question: "What board game did Ben create?"
+            Wrong1:"The Iron Throne",
+            Wrong2:"You're an Accountant Harry Potter",
+            Right:"The Cones of Dunshire",
+            Wrong3:"Count Chocula versus Frankenberry",
+            image: ""
         },
     }
 }
