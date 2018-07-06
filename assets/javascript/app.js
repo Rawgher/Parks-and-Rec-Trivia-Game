@@ -27,7 +27,7 @@ var correctAnswers = ["A. Ann Perkins", "B. Nursing", "D. Indiana", "A. Entertai
 
 var gifArray = ["assets/images/andy.gif", "assets/images/ann.gif", "assets/images/pawnee-indiana.gif", "assets/images/tom.gif", "assets/images/sebastian.gif", "assets/images/garry.gif", "assets/images/ben.gif", "assets/images/andy-crying.gif", "assets/images/cones.gif", "assets/images/treat-yo-self.gif"]
      
-
+$(document).ready(function() {
 function gameStart () {
     startGame ="<div class='flex items-center justify-center pa4'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue start' href='#' role='button'>Start the quiz</a></div>";
 	$("#questionDiv").append(startGame);
@@ -44,7 +44,7 @@ $("body").on("click", ".start", function(event){
 )};
 
     $("body").on("click", ".answer", function(event){
-        //answeredQuestion = true;
+
         selectedAnswer = $(this).text();
         if(selectedAnswer === correctAnswers[questionCounter]) {
     
@@ -52,11 +52,18 @@ $("body").on("click", ".start", function(event){
             youDidGood();
         }
         else {
-            //alert("wrong answer!");
+
             clearInterval(gameTimer);
             youDidBad();
         }
     });
+
+    $("body").on("click", ".reset", function(event){
+        
+        resetGame();
+    });
+
+)};
 
 
 function generateQuestions() {
@@ -68,8 +75,6 @@ function generateQuestions() {
     "</div><div class='option'> D." + answerArray[questionNumber][3] + "</div>");
     $("#questionDiv").append(timer, questions, options);
 }
-
-
 
 // figure out a theme (parks and rec trivia? game of thrones trivia? arrested development? marvel studios trivia?)
 // need to make arrays of questions with right and wrong answers
