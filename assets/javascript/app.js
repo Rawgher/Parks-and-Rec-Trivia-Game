@@ -50,7 +50,6 @@ $("#questionDiv").on("click", ".start", function() {
     $("#questionDiv").on("click", ".answer", function(){
 
         selectedAnswer = $(this).text();
-        console.log(this);
         if(selectedAnswer === correctAnswers[questionNumber]) {
     
             clearInterval(gameTimer);
@@ -92,13 +91,13 @@ function youDidBad() {
 }
 
 function generateQuestions() {
-    timer = $("<div class='timer-word'>Time Remaining: <span class='timer'>20</span></div>");
+    showTimer = $("<div class='timer-word'>Time Remaining: <span class='timer'>20</span></div>");
     questions = $("<div class='question'>" + questionArray[questionNumber] + "</div>");
     options = $("<div class='answer'>A. " + answerArray[questionNumber][0] + 
     "</div><div class='answer'>B. " + answerArray[questionNumber][1] + 
     "</div><div class='answer'>C. " + answerArray[questionNumber][2] + 
     "</div><div class='answer'>D. " + answerArray[questionNumber][3] + "</div>");
-    $("#questionDiv").append(timer, questions, options);
+    $("#questionDiv").append(showTimer, questions, options);
 }
 
 function wait() {
