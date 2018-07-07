@@ -17,8 +17,6 @@ var unanswered = 0;
 var questionNumber = 0;
 var correctOption;
 var gameTimer;
-var options;
-var questions;
 var gameText;
 var questionArray = ["Who lived in the pit for a good amount of time?", "Ann's original profession was: ", "What state is Pawnee located in?", "What was the first company that Tom helped create?", "What is the name of Pawnee's beloved mini horse?", "What is Jerry's real name?", "How old was Ben when the Ice Town incident occured", "Which character was only supposed to be in Season 1?", "What board game did Ben create?", "What is Donna and Tom's signature catchphrase?"];
 
@@ -35,19 +33,19 @@ $(document).ready(function() {
 
 function gameStart () {
     startGame ="<div class='flex items-center justify-center pa4'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue start' href='#' role='button'>Start the quiz</a></div>";
-	$("#questionDiv").append(startGame);
+	$("body").html(startGame);
 }
 
 gameStart();
 
-$("#questionDiv").on("click", ".start", function() {
+$("body").on("click", ".start", function() {
 	// add sound array here
 	generateQuestions();
 
 	timer();
 });
 
-    $("#questionDiv").on("click", ".answer", function(){
+    $("body").on("click", ".answer", function(){
 
         selectedAnswer = $(this).text();
         if(selectedAnswer === correctAnswers[questionNumber]) {
@@ -72,32 +70,30 @@ $("#questionDiv").on("click", ".start", function() {
 function timeOut() {
 	unanswered++;
 	gameText = "<div class='text-center'>You're out of time! The right answer was: " + correctAnswers[questionNumber] + "</div>" + "<img src='" + gifArray[questionNumber] + "'>";
-	$("#questionDiv").append(gameText);
+	$("body").html(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidGood() {
 	rightAnswers++;
 	gameText = "<div class='text-center'>You got it! The answer is: " + correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
-	$("#questionDiv").append(gameText);
+	$("body").html(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidBad() {
     wrongAnswers++;
 	gameText = "<div class='text-center'>You're wrong! The answer is: "+ correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
-	$("#questionDiv").append(gameText);
+	$("body").html(gameText);
     setTimeout(wait, 4000);
 }
 
 function generateQuestions() {
-    showTimer = $("<div class='timer-word'>Time Remaining: <span class='timer'>20</span></div>");
-    questions = $("<div class='question'>" + questionArray[questionNumber] + "</div>");
-    options = $("<div class='answer'>A. " + answerArray[questionNumber][0] + 
+    gameText = $("<div class='timer-word'>Time Remaining: <span class='timer'>20</span></div><div class='question'>" + questionArray[questionNumber] + "</div><div class='answer'>A. " + answerArray[questionNumber][0] + 
     "</div><div class='answer'>B. " + answerArray[questionNumber][1] + 
     "</div><div class='answer'>C. " + answerArray[questionNumber][2] + 
     "</div><div class='answer'>D. " + answerArray[questionNumber][3] + "</div>");
-    $("#questionDiv").append(showTimer, questions, options);
+    $("body").html(gameText);
 }
 
 function wait() {
@@ -128,7 +124,7 @@ function timer() {
 
 function gameOver() {
 	gameText = "<div class='timer-word'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>That's it! Let's see how you did!" + "</div>" + "<div class='rightAnswers'>Correct Answers: " + rightAnswers + "</div>" + "<div>Wrong Answers: " + wrongAnswers + "</div>" + "<div>Unanswered: " + unanswered + "</div>" + "<div class='text-center reset-button-container'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue reset' href='#' role='button'>Play again!</a></div>";
-    $("#questionDiv").append(gameText);
+    $("body").html(gameText);
 }
 
 function resetGame() {
