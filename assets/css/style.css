@@ -1,11 +1,25 @@
-/* html {
-    background:; 
+ body {
+    background: url("../images/logo.jpg"); 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  } */
+  } 
 
 body {
     font-size: 20px;
+}
+
+#quizContainer {
+    background: rgba(128, 25, 50, 0.5);
+    position: relative;
+    top: 250px;
+}
+
+.answer:hover {
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-color: rgba(0, 0, 0, .05);
+background-color: #cdecff;
+padding: 1rem;
 }

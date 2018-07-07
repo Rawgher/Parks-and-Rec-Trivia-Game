@@ -33,19 +33,19 @@ $(document).ready(function() {
 
 function gameStart () {
     startGame ="<div class='flex items-center justify-center pa4'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue start' href='#' role='button'>Start the quiz</a></div>";
-	$("body").html(startGame);
+	$("#quizContainer").html(startGame);
 }
 
 gameStart();
 
-$("body").on("click", ".start", function() {
+$("#quizContainer").on("click", ".start", function() {
 	// add sound array here
 	generateQuestions();
 
 	timer();
 });
 
-    $("body").on("click", ".answer", function(){
+    $("#quizContainer").on("click", ".answer", function(){
 
         selectedAnswer = $(this).text();
         if(selectedAnswer === correctAnswers[questionNumber]) {
@@ -60,7 +60,7 @@ $("body").on("click", ".start", function() {
         }
     });
 
-    $("body").on("click", ".reset", function(){
+    $("#quizContainer").on("click", ".reset", function(){
         
         resetGame();
     });
@@ -70,21 +70,21 @@ $("body").on("click", ".start", function() {
 function timeOut() {
 	unanswered++;
 	gameText = "<div class='flex items-center justify-center pa2'>You're out of time! The right answer was: " + correctAnswers[questionNumber] + "</div><div class='flex items-center justify-center pa2'><img src='" + gifArray[questionNumber] + "'></div>";
-	$("body").html(gameText);
+	$("#quizContainer").html(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidGood() {
 	rightAnswers++;
 	gameText = "<div class='flex items-center justify-center pa2'>You got it! The answer is: " + correctAnswers[questionNumber] + "</div><div class= 'flex items-center justify-center pa2'><img src='" + gifArray[questionNumber] + "'></div>";
-	$("body").html(gameText);
+	$("#quizContainer").html(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidBad() {
     wrongAnswers++;
 	gameText = "<div class='flex items-center justify-center pa2'>You're wrong! The answer is: "+ correctAnswers[questionNumber] + "</div><div class='flex items-center justify-center pa2'><img src='" + gifArray[questionNumber] + "'></div>";
-	$("body").html(gameText);
+	$("#quizContainer").html(gameText);
     setTimeout(wait, 4000);
 }
 
@@ -93,7 +93,7 @@ function generateQuestions() {
     "</div><div class='answer flex items-center justify-center pa1'>B. " + answerArray[questionNumber][1] + 
     "</div><div class='answer flex items-center justify-center pa1'>C. " + answerArray[questionNumber][2] + 
     "</div><div class='answer flex items-center justify-center pa1'>D. " + answerArray[questionNumber][3] + "</div>");
-    $("body").html(gameText);
+    $("#quizContainer").html(gameText);
 }
 
 function wait() {
@@ -124,7 +124,7 @@ function timer() {
 
 function gameOver() {
 	gameText = "<div class='text-center flex items-center justify-center pa2'>That's it! Let's see how you did!" + "</div>" + "<div class='rightAnswers flex items-center justify-center pa2'>Correct Answers: " + rightAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Wrong Answers: " + wrongAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Unanswered: " + unanswered + "</div>" + "<div class='text-center reset-button-container flex items-center justify-center pa2'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue reset' href='#' role='button'>Play again!</a></div>";
-    $("body").html(gameText);
+    $("#quizContainer").html(gameText);
 }
 
 function resetGame() {
