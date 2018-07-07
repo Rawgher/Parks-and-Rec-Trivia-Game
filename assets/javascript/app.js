@@ -69,30 +69,30 @@ $("body").on("click", ".start", function() {
 
 function timeOut() {
 	unanswered++;
-	gameText = "<div class='text-center'>You're out of time! The right answer was: " + correctAnswers[questionNumber] + "</div>" + "<img src='" + gifArray[questionNumber] + "'>";
+	gameText = "<div class='flex items-center justify-center pa2'>You're out of time! The right answer was: " + correctAnswers[questionNumber] + "</div><div class='flex items-center justify-center pa2'><img src='" + gifArray[questionNumber] + "'></div>";
 	$("body").html(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidGood() {
 	rightAnswers++;
-	gameText = "<div class='text-center'>You got it! The answer is: " + correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
+	gameText = "<div class='flex items-center justify-center pa2'>You got it! The answer is: " + correctAnswers[questionNumber] + "</div><div class= 'flex items-center justify-center pa2'><img src='" + gifArray[questionNumber] + "'></div>";
 	$("body").html(gameText);
     setTimeout(wait, 4000); 
 }
 
 function youDidBad() {
     wrongAnswers++;
-	gameText = "<div class='text-center'>You're wrong! The answer is: "+ correctAnswers[questionNumber] + "</div><img src='" + gifArray[questionNumber] + "'>";
+	gameText = "<div class='flex items-center justify-center pa2'>You're wrong! The answer is: "+ correctAnswers[questionNumber] + "</div><div class='flex items-center justify-center pa2'><img src='" + gifArray[questionNumber] + "'></div>";
 	$("body").html(gameText);
     setTimeout(wait, 4000);
 }
 
 function generateQuestions() {
-    gameText = $("<div class='timer-word'>Time Remaining: <span class='timer'>20</span></div><div class='question'>" + questionArray[questionNumber] + "</div><div class='answer'>A. " + answerArray[questionNumber][0] + 
-    "</div><div class='answer'>B. " + answerArray[questionNumber][1] + 
-    "</div><div class='answer'>C. " + answerArray[questionNumber][2] + 
-    "</div><div class='answer'>D. " + answerArray[questionNumber][3] + "</div>");
+    gameText = $("<div class='timer-word flex items-center justify-center pa1'>Time Remaining: <span class='timer flex items-center justify-center pa1'>20</span></div><div class='question flex items-center justify-center pa1'>" + questionArray[questionNumber] + "</div><div class='answer flex items-center justify-center pa1'>A. " + answerArray[questionNumber][0] + 
+    "</div><div class='answer flex items-center justify-center pa1'>B. " + answerArray[questionNumber][1] + 
+    "</div><div class='answer flex items-center justify-center pa1'>C. " + answerArray[questionNumber][2] + 
+    "</div><div class='answer flex items-center justify-center pa1'>D. " + answerArray[questionNumber][3] + "</div>");
     $("body").html(gameText);
 }
 
@@ -123,7 +123,7 @@ function timer() {
 }
 
 function gameOver() {
-	gameText = "<div class='timer-word'>Time Remaining: <span class='timer'>" + counter + "</span></div>" + "<div class='text-center'>That's it! Let's see how you did!" + "</div>" + "<div class='rightAnswers'>Correct Answers: " + rightAnswers + "</div>" + "<div>Wrong Answers: " + wrongAnswers + "</div>" + "<div>Unanswered: " + unanswered + "</div>" + "<div class='text-center reset-button-container'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue reset' href='#' role='button'>Play again!</a></div>";
+	gameText = "<div class='text-center flex items-center justify-center pa2'>That's it! Let's see how you did!" + "</div>" + "<div class='rightAnswers flex items-center justify-center pa2'>Correct Answers: " + rightAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Wrong Answers: " + wrongAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Unanswered: " + unanswered + "</div>" + "<div class='text-center reset-button-container flex items-center justify-center pa2'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue reset' href='#' role='button'>Play again!</a></div>";
     $("body").html(gameText);
 }
 
