@@ -32,7 +32,7 @@ $(document).ready(function() {
     
 
 function gameStart () {
-    startGame ="<div class='flex items-center justify-center pa4'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue start' href='#' role='button'>Start the quiz</a></div>";
+    startGame ="<div class='flex items-center justify-center pa4'><a class='f6 grow no-underline ph3 pv2 mb2 dib white bg-dark-blue start' href='#' role='button'>Start the quiz</a></div>";
 	$("#quizContainer").html(startGame);
 }
 
@@ -123,7 +123,7 @@ function timer() {
 }
 
 function gameOver() {
-	gameText = "<div class='text-center flex items-center justify-center pa2'>That's it! Let's see how you did!" + "</div>" + "<div class='rightAnswers flex items-center justify-center pa2'>Correct Answers: " + rightAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Wrong Answers: " + wrongAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Unanswered: " + unanswered + "</div>" + "<div class='text-center reset-button-container flex items-center justify-center pa2'><a class='f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue reset' href='#' role='button'>Play again!</a></div>";
+	gameText = "<div class='text-center flex items-center justify-center pa2'>That's it! Let's see how you did!" + "</div>" + "<div class='rightAnswers flex items-center justify-center pa2'>Correct Answers: " + rightAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Wrong Answers: " + wrongAnswers + "</div>" + "<div class='flex items-center justify-center pa2'>Unanswered: " + unanswered + "</div>" + "<div class='text-center reset-button-container flex items-center justify-center pa2'><a class='f6 grow no-underline ph3 pv2 mb2 dib white bg-dark-blue reset' href='#' role='button'>Play again!</a></div>";
     $("#quizContainer").html(gameText);
 }
 

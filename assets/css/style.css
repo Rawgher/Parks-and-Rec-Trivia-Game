@@ -1,5 +1,5 @@
  body {
-    background: url("../images/logo.jpg"); 
+    background: url("../images/swanson.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -11,15 +11,15 @@ body {
 }
 
 #quizContainer {
-    background: rgba(128, 25, 50, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     position: relative;
-    top: 250px;
+    top: 500px;
+    color: white;
 }
 
 .answer:hover {
 border-bottom-style: solid;
 border-bottom-width: 1px;
 border-color: rgba(0, 0, 0, .05);
-background-color: #cdecff;
-padding: 1rem;
+background-color: #ffb700;
 }
